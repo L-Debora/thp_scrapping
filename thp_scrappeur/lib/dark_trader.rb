@@ -14,7 +14,7 @@ def crazy_scrapper
   end
 
   doc.xpath('//*[@class="price"]').each do |price|
-    price_array << price.content.delete('$').to_f
+    price_array << price.content.delete('$').to_f # possible de [1..-1]
   end
 
   # ".zip" Converts any arguments to arrays, then merges elements of self with corresponding elements from each argument.
@@ -25,3 +25,5 @@ def crazy_scrapper
 end
 
 puts crazy_scrapper.inspect #.inspect 
+
+#a tester each_with_index !! pour push deux arguments ! 
